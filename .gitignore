@@ -1,8 +1,6 @@
-node_modules
+node_modules/
+dist/
 .env
-build
-dist
-coverage
+.env.local
 .DS_Store
-.idea
-.vscode
+Thumbs.db

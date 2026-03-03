@@ -1,0 +1,610 @@
+/* ========================
+   RESET & BASE
+======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+a {
+  color: #4361ee;
+  text-decoration: none;
+}
+
+/* ========================
+   NAVBAR
+======================== */
+.navbar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.nav-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #a0aec0;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-user {
+  color: #7dd3fc;
+  font-size: 0.9rem;
+}
+
+.btn-register {
+  background: #4361ee;
+  color: white !important;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem !important;
+  transition: background 0.2s !important;
+}
+
+.btn-register:hover {
+  background: #3451d1 !important;
+}
+
+.btn-logout {
+  background: none;
+  border: 1px solid #e53e3e;
+  color: #fc8181;
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  background: #e53e3e;
+  color: white;
+}
+
+/* ========================
+   PAGE LAYOUT
+======================== */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.page-container {
+  width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  color: #1a1a2e;
+}
+
+/* ========================
+   BUTTONS
+======================== */
+.btn-primary {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #3451d1;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #edf2f7;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #4361ee;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+.btn-vote {
+  background: #f6f8ff;
+  border: 2px solid #4361ee;
+  color: #4361ee;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-vote:hover {
+  background: #4361ee;
+  color: white;
+}
+
+.btn-vote-small {
+  background: #ebf4ff;
+  border: 1px solid #4361ee;
+  color: #4361ee;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.btn-resolve {
+  background: #f0fff4;
+  border: 2px solid #38a169;
+  color: #38a169;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-resolve:hover {
+  background: #38a169;
+  color: white;
+}
+
+.btn-resolve-small {
+  background: #f0fff4;
+  border: 1px solid #38a169;
+  color: #38a169;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+/* ========================
+   FILTERS
+======================== */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.filter-input:focus {
+  border-color: #4361ee;
+}
+
+.filter-select {
+  padding: 0.6rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+  outline: none;
+}
+
+/* ========================
+   ISSUES GRID
+======================== */
+.issues-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+/* ========================
+   ISSUE CARD
+======================== */
+.issue-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid #e8ecf0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.issue-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: #4361ee;
+}
+
+.issue-card.resolved {
+  opacity: 0.75;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7rem;
+}
+
+.card-category {
+  font-size: 0.8rem;
+  color: #718096;
+  text-transform: capitalize;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: 0.88rem;
+  color: #718096;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+.card-location {
+  font-size: 0.82rem;
+  color: #a0aec0;
+  margin-bottom: 0.8rem;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.card-votes {
+  font-size: 0.88rem;
+  color: #4361ee;
+  font-weight: 600;
+}
+
+/* ========================
+   STATUS BADGE
+======================== */
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-open {
+  background: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #fed7d7;
+}
+
+.status-resolved {
+  background: #f0fff4;
+  color: #38a169;
+  border: 1px solid #c6f6d5;
+}
+
+/* ========================
+   CREATE FORM
+======================== */
+.create-form-container {
+  background: white;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid #4361ee;
+  box-shadow: 0 4px 20px rgba(67, 97, 238, 0.1);
+}
+
+.create-form-container h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #1a1a2e;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ========================
+   ISSUE DETAIL
+======================== */
+.detail-page {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.issue-detail-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.issue-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.issue-detail-header h1 {
+  font-size: 1.5rem;
+  color: #1a1a2e;
+  line-height: 1.3;
+}
+
+.issue-category {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.issue-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.issue-location {
+  font-size: 0.9rem;
+  color: #a0aec0;
+  margin-bottom: 1.5rem;
+}
+
+.issue-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ========================
+   COMMENTS
+======================== */
+.comments-section {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.comments-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #1a1a2e;
+}
+
+.comment-form {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.comment-form textarea:focus {
+  border-color: #4361ee;
+}
+
+.comment-item {
+  padding: 1rem;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.comment-date {
+  font-size: 0.8rem;
+  color: #a0aec0;
+}
+
+.comment-item p {
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* ========================
+   AUTH PAGES
+======================== */
+.auth-container {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+.auth-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #1a1a2e;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+/* ========================
+   FORMS (shared)
+======================== */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+/* ========================
+   MESSAGES
+======================== */
+.error-msg {
+  background: #fff5f5;
+  color: #e53e3e;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #fed7d7;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.feedback-msg {
+  font-size: 0.85rem;
+  color: #38a169;
+}
+
+.error-small {
+  font-size: 0.8rem;
+  color: #e53e3e;
+}
+
+.loading-text {
+  text-align: center;
+  color: #718096;
+  padding: 3rem;
+  font-size: 1rem;
+}
+
+.empty-text {
+  text-align: center;
+  color: #a0aec0;
+  padding: 3rem;
+  font-size: 0.95rem;
+}
